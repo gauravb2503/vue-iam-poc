@@ -1,5 +1,10 @@
-import { createApp } from 'vue'
+import { createApp } from 'vue';
 import './style.css'
-import App from './App.vue'
+import App from './App.vue';
+import { Amplify } from 'aws-amplify';
+import awsmobile from './aws-exports';
+import router from './routing';
 
-createApp(App).mount('#app')
+Amplify.configure(awsmobile);
+
+createApp(App).use(router).mount('#app');
